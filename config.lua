@@ -55,24 +55,27 @@ Config.Locations = {
 Config.AuthorizedVehicles = {
 	-- Grade 0
 	[0] = {
-		["ambulance"] = "Ambulance",
+		-- ["ambulance"] = "Ambulance",
 	},
 	-- Grade 1
 	[1] = {
 		["ambulance"] = "Ambulance",
-
+        ["mug"] = "Mug",
 	},
 	-- Grade 2
 	[2] = {
 		["ambulance"] = "Ambulance",
+        ["mug"] = "Mug",
 	},
 	-- Grade 3
 	[3] = {
 		["ambulance"] = "Ambulance",
+        ["mug"] = "Mug",
 	},
 	-- Grade 4
 	[4] = {
 		["ambulance"] = "Ambulance",
+        ["mug"] = "Mug",
 	}
 }
 
@@ -121,14 +124,6 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 5,
-        },
-        [6] = {
-            name = "weapon_fireextinguisher",
-            price = 0,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 6,
         },
     }
 }
