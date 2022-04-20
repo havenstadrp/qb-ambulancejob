@@ -1,5 +1,7 @@
 Config = {}
 
+Config.UseTarget = GetConvar('UseTarget', false)
+
 Config.MinimalDoctors = 2
 Config.WipeInventoryOnRespawn = true
 
@@ -28,10 +30,7 @@ Config.Locations = {
         [1] = vector4(342.3204, -585.703, 28.799, 55.5),
     },
     ["main"] = {
-        [1] = vector3(332.51, -595.74, 43.28),
-    },
-    ["main2"] = {
-        [1] = vector3(330.1065, -601.137, 43.284),
+        [1] = vector3(298.74, -599.33, 43.29),
     },
     ["stash"] = {
         [1] = vector3(301.9008, -599.453, 43.284),
