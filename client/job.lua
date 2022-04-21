@@ -541,46 +541,46 @@ if Config.UseTarget == 'true' then
                 distance = 1.5
             })
         end
-        for k, v in pairs(Config.Locations["roof"]) do
-            exports['qb-target']:AddBoxZone("roof"..k, vector3(v.x, v.y, v.z), 2, 2, {
-                name = "roof"..k,
-                debugPoly = false,
-                heading = -20,
-                minZ = v.z - 2,
-                maxZ = v.z + 2,
-            }, {
-                options = {
-                    {
-                        type = "client",
-                        event = "qb-ambulancejob:elevator_roof",
-                        icon = "fas fa-hand-point-up",
-                        label = "Take Elevator",
-                        job = "ambulance"
-                    },
-                },
-                distance = 8
-            })
-        end
-        for k, v in pairs(Config.Locations["main"]) do
-            exports['qb-target']:AddBoxZone("main"..k, vector3(v.x, v.y, v.z), 1.5, 1.5, {
-                name = "main"..k,
-                debugPoly = false,
-                heading = -20,
-                minZ = v.z - 2,
-                maxZ = v.z + 2,
-            }, {
-                options = {
-                    {
-                        type = "client",
-                        event = "qb-ambulancejob:elevator_main",
-                        icon = "fas fa-hand-point-up",
-                        label = "Take Elevator",
-                        job = "ambulance"
-                    },
-                },
-                distance = 8
-            })
-        end
+        -- for k, v in pairs(Config.Locations["roof"]) do
+        --     exports['qb-target']:AddBoxZone("roof"..k, vector3(v.x, v.y, v.z), 2, 2, {
+        --         name = "roof"..k,
+        --         debugPoly = false,
+        --         heading = -20,
+        --         minZ = v.z - 2,
+        --         maxZ = v.z + 2,
+        --     }, {
+        --         options = {
+        --             {
+        --                 type = "client",
+        --                 event = "qb-ambulancejob:elevator_roof",
+        --                 icon = "fas fa-hand-point-up",
+        --                 label = "Take Elevator",
+        --                 job = "ambulance"
+        --             },
+        --         },
+        --         distance = 8
+        --     })
+        -- end
+        -- for k, v in pairs(Config.Locations["main"]) do
+        --     exports['qb-target']:AddBoxZone("main"..k, vector3(v.x, v.y, v.z), 1.5, 1.5, {
+        --         name = "main"..k,
+        --         debugPoly = false,
+        --         heading = -20,
+        --         minZ = v.z - 2,
+        --         maxZ = v.z + 2,
+        --     }, {
+        --         options = {
+        --             {
+        --                 type = "client",
+        --                 event = "qb-ambulancejob:elevator_main",
+        --                 icon = "fas fa-hand-point-up",
+        --                 label = "Take Elevator",
+        --                 job = "ambulance"
+        --             },
+        --         },
+        --         distance = 8
+        --     })
+        -- end
     end)
 else
     CreateThread(function()
