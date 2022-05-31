@@ -313,6 +313,12 @@ local function LeaveBed()
     bedObject = nil
     bedOccupyingData = nil
     isInHospitalBed = false
+	
+    QBCore.Functions.GetPlayerData(function(PlayerData)
+	if PlayerData.metadata["injail"] > 0 then
+		TriggerEvent("prison:client:Enter", PlayerData.metadata["injail"])
+	end
+    end)
 end
 
 local function IsInDamageList(damage)
@@ -871,12 +877,12 @@ RegisterNetEvent('qb-ambulancejob:beds', function()
     end
 end)
 
--- Convar Turns into strings
-if Config.UseTarget == 'true' then
+-- Convar turns into a boolean
+if Config.UseTarget then
     CreateThread(function()
         for k, v in pairs(Config.Locations["checking"]) do
             exports['qb-target']:AddBoxZone("checking"..k, vector3(v.x, v.y, v.z), 3.5, 2, {
-                name = "checkin"..k,
+                name = "checking"..k,
                 heading = -72,
                 debugPoly = false,
                 minZ = v.z - 2,
