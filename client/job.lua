@@ -289,10 +289,10 @@ local check = false
                     TriggerEvent('qb-ambulancejob:storeheli')
                 elseif variable == "takeheli" then
                     TriggerEvent('qb-ambulancejob:pullheli')
-                elseif variable == "roof" then
-                    TriggerEvent('qb-ambulancejob:elevator_main')
-                elseif variable == "main" then
-                    TriggerEvent('qb-ambulancejob:elevator_roof')
+                -- elseif variable == "roof" then
+                --     TriggerEvent('qb-ambulancejob:elevator_main')
+                -- elseif variable == "main" then
+                --     TriggerEvent('qb-ambulancejob:elevator_roof')
                 end
             end
             Wait(1)
@@ -633,56 +633,56 @@ else
             end
         end)
 
-        local roofPoly = {}
-        for k, v in pairs(Config.Locations["roof"]) do
-            roofPoly[#roofPoly+1] = BoxZone:Create(vector3(vector3(v.x, v.y, v.z)), 2, 2, {
-                name="roof"..k,
-                debugPoly = false,
-                heading = 70,
-                minZ = v.z - 2,
-                maxZ = v.z + 2,
-            })
-        end
+        -- local roofPoly = {}
+        -- for k, v in pairs(Config.Locations["roof"]) do
+        --     roofPoly[#roofPoly+1] = BoxZone:Create(vector3(vector3(v.x, v.y, v.z)), 2, 2, {
+        --         name="roof"..k,
+        --         debugPoly = false,
+        --         heading = 70,
+        --         minZ = v.z - 2,
+        --         maxZ = v.z + 2,
+        --     })
+        -- end
 
-        local roofCombo = ComboZone:Create(roofPoly, {name = "roofCombo", debugPoly = false})
-        roofCombo:onPlayerInOut(function(isPointInside)
-            if isPointInside and PlayerJob.name =="ambulance" then
-                if onDuty then
-                    exports['qb-core']:DrawText(Lang:t('text.elevator_main'),'left')
-                    EMSControls("main")
-                else
-                    exports['qb-core']:DrawText(Lang:t('error.not_ems'),'left')
-                end
-            else
-                check = false
-                exports['qb-core']:HideText()
-            end
-        end)
+        -- local roofCombo = ComboZone:Create(roofPoly, {name = "roofCombo", debugPoly = false})
+        -- roofCombo:onPlayerInOut(function(isPointInside)
+        --     if isPointInside and PlayerJob.name =="ambulance" then
+        --         if onDuty then
+        --             exports['qb-core']:DrawText(Lang:t('text.elevator_main'),'left')
+        --             EMSControls("main")
+        --         else
+        --             exports['qb-core']:DrawText(Lang:t('error.not_ems'),'left')
+        --         end
+        --     else
+        --         check = false
+        --         exports['qb-core']:HideText()
+        --     end
+        -- end)
 
-        local mainPoly = {}
-        for k, v in pairs(Config.Locations["main"]) do
-            mainPoly[#mainPoly+1] = BoxZone:Create(vector3(vector3(v.x, v.y, v.z)), 1.5, 1.5, {
-                name="main"..k,
-                debugPoly = false,
-                heading = 70,
-                minZ = v.z - 2,
-                maxZ = v.z + 2,
-            })
-        end
+        -- local mainPoly = {}
+        -- for k, v in pairs(Config.Locations["main"]) do
+        --     mainPoly[#mainPoly+1] = BoxZone:Create(vector3(vector3(v.x, v.y, v.z)), 1.5, 1.5, {
+        --         name="main"..k,
+        --         debugPoly = false,
+        --         heading = 70,
+        --         minZ = v.z - 2,
+        --         maxZ = v.z + 2,
+        --     })
+        -- end
 
-        local mainCombo = ComboZone:Create(mainPoly, {name = "mainPoly", debugPoly = false})
-        mainCombo:onPlayerInOut(function(isPointInside)
-            if isPointInside and PlayerJob.name =="ambulance" then
-                if onDuty then
-                    exports['qb-core']:DrawText(Lang:t('text.elevator_roof'),'left')
-                    EMSControls("roof")
-                else
-                    exports['qb-core']:DrawText(Lang:t('error.not_ems'),'left')
-                end
-            else
-                check = false
-                exports['qb-core']:HideText()
-            end
-        end)
+        -- local mainCombo = ComboZone:Create(mainPoly, {name = "mainPoly", debugPoly = false})
+        -- mainCombo:onPlayerInOut(function(isPointInside)
+        --     if isPointInside and PlayerJob.name =="ambulance" then
+        --         if onDuty then
+        --             exports['qb-core']:DrawText(Lang:t('text.elevator_roof'),'left')
+        --             EMSControls("roof")
+        --         else
+        --             exports['qb-core']:DrawText(Lang:t('error.not_ems'),'left')
+        --         end
+        --     else
+        --         check = false
+        --         exports['qb-core']:HideText()
+        --     end
+        -- end)
     end)
 end
