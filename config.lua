@@ -73,6 +73,12 @@ Config.Locations = { -- Edit the various interaction points for players or creat
         [8] = {coords = vector4(309.33, -577.3, 44.2, 158.98), taken = false, model = 1631638868},
         -- [9] = {coords = vector4(307.63, -581.9, 44.2, 336.67), taken = false, model = 1631638868},
     },
+    ["jailbeds"] = {
+        [1] = {coords = vector4(1761.96, 2597.74, 45.66, 270.14), taken = false, model = 2117668672},
+        [2] = {coords = vector4(1761.96, 2591.51, 45.66, 269.8), taken = false, model = 2117668672},
+        [3] = {coords = vector4(1771.8, 2598.02, 45.66, 89.05), taken = false, model = 2117668672},
+        [4] = {coords = vector4(1771.85, 2591.85, 45.66, 91.51), taken = false, model = 2117668672},
+    },
     ["stations"] = {
         [1] = {label = Lang:t('info.pb_hospital'), coords = vector4(304.27, -600.33, 43.28, 272.249)}
     }
