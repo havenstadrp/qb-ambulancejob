@@ -280,7 +280,7 @@ local check = false
             if IsControlJustPressed(0, 38) then
                 exports['qb-core']:KeyPressed(38)
                 if variable == "sign" then
-                   TriggerEvent('EMSToggle:Duty')
+                    TriggerEvent('EMSToggle:Duty')
                 elseif variable == "stash" then
                     TriggerEvent('qb-ambulancejob:stash')
                 elseif variable == "armory" then
